@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 450 673">
+  <defs>
+    <linearGradient id="g" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#e8ddcf"/>
+      <stop offset="1" stop-color="#c9b39a"/>
+    </linearGradient>
+  </defs>
+  <rect width="450" height="673" fill="url(#g)"/>
+  <g fill="#a48a6f" opacity=".35">
+    <circle cx="190" cy="330" r="26"/>
+    <path d="M150 560c0-110 18-180 40-200s40 90 40 200z"/>
+    <circle cx="262" cy="322" r="24"/>
+    <path d="M226 560c4-120 16-186 36-206s38 86 42 206z"/>
+  </g>
+  <text x="225" y="620" text-anchor="middle" font-family="Georgia, serif" font-size="14" fill="#8c7666" opacity=".7">Replace with /public/media/closing-photo.jpg</text>
+</svg>

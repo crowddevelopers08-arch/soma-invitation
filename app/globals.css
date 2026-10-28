@@ -1,0 +1,150 @@
+@import "tailwindcss";
+
+@theme inline {
+  --font-script: var(--nf-imperial), cursive;
+  --font-names: var(--nf-beau), cursive;
+  --font-ovo: var(--nf-ovo), Georgia, serif;
+  --font-serif: var(--nf-cormorant), Georgia, serif;
+  --font-cinzel: var(--nf-cinzel), Georgia, serif;
+  --font-naskh: var(--nf-naskh), serif;
+  --font-federo: var(--nf-federo), Georgia, serif;
+
+  --color-cream: #f9f0e0;
+  --color-gold: #a67d2b;
+  --color-gold-2: #b48c3d;
+  --color-gold-3: #a07b33;
+  --color-brown: #6c513f;
+  --color-brown-2: #6a5140;
+  --color-taupe: #846f61;
+  --color-dot: #8c7666;
+  --color-wine: #5a0f1b;
+  --color-ink: #4f4f4f;
+}
+
+/* Zero-block scale factor (window width / breakpoint grid); set before paint in app/layout.tsx. */
+:root {
+  --zs: 1;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+}
+
+body {
+  min-width: 0;
+}
+
+/* Preserve the artwork while keeping content inside a phone's readable area. */
+@media (max-width: 639px) {
+  .invitation-canvas > [class*="w-[560px]"] {
+    left: calc(50% - 220px);
+    width: 440px;
+  }
+
+  .invitation-copy {
+    font-size: 24px;
+    line-height: 29px;
+  }
+
+  .venue-name {
+    font-size: 24px;
+    line-height: 32px;
+  }
+
+  .venue-address {
+    font-size: 21px;
+    line-height: 26px;
+  }
+
+  .invitation-canvas .schedule-label {
+    font-size: 24px;
+    line-height: 1.2;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-delay: 0ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* Looping step-by-step animations */
+@keyframes sway-a {
+  0%, 100% { transform: scale(1) rotate(0deg); }
+  50%      { transform: scale(1.06) rotate(2deg); }
+}
+@keyframes sway-b {
+  0%, 100% { transform: scale(1) rotate(0deg); }
+  50%      { transform: scale(1.04) rotate(-2deg); }
+}
+@keyframes sway-c {
+  0%, 100% { transform: scale(1) rotate(0deg); }
+  50%      { transform: scale(1.02) rotate(1deg); }
+}
+@keyframes breathe-a {
+  0%, 50%, 100% { transform: scale(1) rotate(0deg); }
+  25%           { transform: scale(1.02) rotate(1deg); }
+  75%           { transform: scale(0.98) rotate(-1deg); }
+}
+@keyframes breathe-b {
+  0%, 100% { transform: scale(1) rotate(0deg); }
+  25%      { transform: scale(1.04) rotate(1deg); }
+  50%      { transform: scale(0.98) rotate(0deg); }
+  75%      { transform: scale(0.98) rotate(-2deg); }
+}
+@keyframes bob {
+  0%, 100% { transform: translateY(0); }
+  54.5%    { transform: translateY(5px); }
+}
+
+/* Falling petals (location block) */
+@keyframes petal-1 {
+  37.5% { transform: translate(27px, 163px) rotate(-6deg); opacity: 1; }
+  75%   { transform: translate(60px, 341px) rotate(-7deg); opacity: 0.8; }
+  100%  { transform: translate(77px, 381px) rotate(2deg); opacity: 0; }
+}
+@keyframes petal-2 {
+  37.5% { transform: translate(-39px, 163px) rotate(-6deg); opacity: 1; }
+  75%   { transform: translate(-69px, 341px) rotate(2deg); opacity: 0.8; }
+  100%  { transform: translate(-77px, 381px) rotate(2deg); opacity: 0; }
+}
+@keyframes petal-3 {
+  33.3% { transform: translate(29px, 73px) rotate(-6deg); opacity: 1; }
+  77.8% { transform: translate(57px, 204px) rotate(-6deg); opacity: 1; }
+  100%  { transform: translate(67px, 224px) rotate(-6deg); opacity: 0; }
+}
+@keyframes petal-4 {
+  37.5% { transform: translate(-39px, 133px) rotate(-6deg); opacity: 1; }
+  75%   { transform: translate(-69px, 221px) rotate(2deg); opacity: 1; }
+  100%  { transform: translate(-99px, 251px) rotate(2deg); opacity: 0; }
+}
+@keyframes petal-5 {
+  100% { transform: translate(39px, 83px) rotate(-12deg); opacity: 0; }
+}
+@keyframes petal-6 {
+  100% { transform: translate(-39px, 73px) rotate(-6deg); opacity: 0; }
+}
+
+/* Countdown */
+@keyframes ink-reveal {
+  from { clip-path: inset(0 100% 0 0); }
+  to   { clip-path: inset(0 0 0 0); }
+}
+@keyframes candle-shimmer {
+  0%, 100% { background-position: 100% 0; }
+  50%      { background-position: 0% 0; }
+}
+
+/* RSVP submit button shine */
+@keyframes btn-flash {
+  0%   { transform: translateX(-85px); }
+  50%, 100% { transform: translateX(110cqw); }
+}
+@keyframes popup-in {
+  from { opacity: 0; transform: translateY(30px); }
+  to   { opacity: 1; transform: translateY(0); }
+}

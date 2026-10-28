@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 24">
+  <!-- Gold rule with two curling scrolls and a three-leaf drop hanging from the centre.
+       Flip vertically (scale-y -1) for the crown version that sits on top of a frame. -->
+  <defs>
+    <linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#c9a25a"/>
+      <stop offset="0.55" stop-color="#b48c3d"/>
+      <stop offset="1" stop-color="#9c7630"/>
+    </linearGradient>
+  </defs>
+  <path d="M1 1.6H99" stroke="#b9975a" stroke-width="0.7" stroke-linecap="round" opacity="0.85"/>
+  <g fill="none" stroke="url(#g)" stroke-width="0.9" stroke-linecap="round">
+    <!-- outer swoops ending in curls -->
+    <path d="M50 4.2C45 8.6 38 5 31 6.2 24.5 7.3 22.6 12.6 26 13.4 28.6 14 29.4 10.8 27.2 10.4"/>
+    <path d="M50 4.2C55 8.6 62 5 69 6.2 75.5 7.3 77.4 12.6 74 13.4 71.4 14 70.6 10.8 72.8 10.4"/>
+    <!-- inner swoops -->
+    <path d="M50 4.2C47 9.8 41.5 10.6 36.5 9.6"/>
+    <path d="M50 4.2C53 9.8 58.5 10.6 63.5 9.6"/>
+  </g>
+  <g fill="url(#g)">
+    <!-- three-leaf drop -->
+    <path d="M50 9.2C52.6 12.6 52.6 18.6 50 23 47.4 18.6 47.4 12.6 50 9.2Z"/>
+    <path d="M48.6 10.6C46.2 12.6 43.4 15.4 42.6 18.6 45.6 17.8 48 15 48.6 10.6Z"/>
+    <path d="M51.4 10.6C53.8 12.6 56.6 15.4 57.4 18.6 54.4 17.8 52 15 51.4 10.6Z"/>
+  </g>
+</svg>

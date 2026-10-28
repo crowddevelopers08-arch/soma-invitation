@@ -1,0 +1,104 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 380 250">
+  <defs>
+    <linearGradient id="wash" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#f4ead7"/>
+      <stop offset="1" stop-color="#e9dbbf"/>
+    </linearGradient>
+    <linearGradient id="dome" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#eadcc0"/>
+      <stop offset=".45" stop-color="#f8f1e3"/>
+      <stop offset="1" stop-color="#dccaa6"/>
+    </linearGradient>
+    <g id="arch">
+      <path d="M0 26V10a7 7 0 0 1 14 0v16" fill="#d9c7a3" stroke="#8a6a3a" stroke-width=".8"/>
+      <path d="M3 26V11a4 4 0 0 1 8 0v15" fill="#c9b289" opacity=".6"/>
+    </g>
+    <g id="window">
+      <path d="M0 14V5a4 4 0 0 1 8 0v9z" fill="#cdb68d" stroke="#8a6a3a" stroke-width=".6"/>
+    </g>
+    <g id="tower">
+      <rect x="-6" y="0" width="12" height="120" fill="url(#wash)" stroke="#8a6a3a" stroke-width=".9"/>
+      <path d="M-8 0h16M-8 40h16M-8 80h16" stroke="#8a6a3a" stroke-width="1"/>
+      <path d="M-9 0c0-12 4-20 9-26 5 6 9 14 9 26z" fill="url(#dome)" stroke="#8a6a3a" stroke-width=".9"/>
+      <path d="M0-26v-10" stroke="#8a6a3a" stroke-width=".9"/>
+      <circle cy="-37" r="1.6" fill="#a67d2b"/>
+      <use xlink:href="#window" x="-4" y="12"/>
+      <use xlink:href="#window" x="-4" y="52"/>
+      <use xlink:href="#window" x="-4" y="92"/>
+    </g>
+  </defs>
+
+  <!-- ground wash -->
+  <ellipse cx="190" cy="236" rx="180" ry="10" fill="#e6d6b6" opacity=".7"/>
+
+  <!-- side towers -->
+  <use xlink:href="#tower" x="38" y="108"/>
+  <use xlink:href="#tower" x="342" y="108"/>
+
+  <!-- side wings -->
+  <g stroke="#8a6a3a" stroke-width=".9">
+    <rect x="50" y="150" width="88" height="78" fill="url(#wash)"/>
+    <rect x="242" y="150" width="88" height="78" fill="url(#wash)"/>
+    <path d="M46 150h96M238 150h96" stroke-width="1.4"/>
+    <path d="M46 146h96M238 146h96"/>
+  </g>
+  <g>
+    <use xlink:href="#arch" x="58" y="196"/><use xlink:href="#arch" x="80" y="196"/><use xlink:href="#arch" x="102" y="196"/>
+    <use xlink:href="#arch" x="250" y="196"/><use xlink:href="#arch" x="272" y="196"/><use xlink:href="#arch" x="294" y="196"/>
+    <use xlink:href="#window" x="64" y="162"/><use xlink:href="#window" x="86" y="162"/><use xlink:href="#window" x="108" y="162"/>
+    <use xlink:href="#window" x="256" y="162"/><use xlink:href="#window" x="278" y="162"/><use xlink:href="#window" x="300" y="162"/>
+  </g>
+
+  <!-- small side domes -->
+  <g stroke="#8a6a3a" stroke-width=".9">
+    <path d="M70 146c0-18 12-28 24-28s24 10 24 28z" fill="url(#dome)"/>
+    <path d="M262 146c0-18 12-28 24-28s24 10 24 28z" fill="url(#dome)"/>
+    <path d="M94 118v-10M286 118v-10"/>
+  </g>
+  <circle cx="94" cy="106" r="1.8" fill="#a67d2b"/>
+  <circle cx="286" cy="106" r="1.8" fill="#a67d2b"/>
+
+  <!-- central hall -->
+  <g stroke="#8a6a3a" stroke-width="1">
+    <rect x="138" y="110" width="104" height="118" fill="url(#wash)"/>
+    <path d="M132 110h116M132 105h116" stroke-width="1.3"/>
+    <rect x="150" y="84" width="80" height="21" fill="url(#wash)"/>
+    <path d="M150 90h80" stroke-width=".7"/>
+  </g>
+  <!-- main dome -->
+  <g stroke="#8a6a3a" stroke-width="1">
+    <path d="M148 84c0-34 18-54 42-62 24 8 42 28 42 62z" fill="url(#dome)"/>
+    <path d="M168 84c2-26 10-44 22-56M212 84c-2-26-10-44-22-56" fill="none" stroke-width=".5" opacity=".6"/>
+    <path d="M190 22V8" stroke-width="1.1"/>
+  </g>
+  <path d="M190 6a4 4 0 1 0 3 6 3 3 0 1 1-3-6z" fill="#a67d2b"/>
+  <g>
+    <use xlink:href="#window" x="160" y="88"/><use xlink:href="#window" x="186" y="88"/><use xlink:href="#window" x="212" y="88"/>
+  </g>
+
+  <!-- grand entrance arch -->
+  <g stroke="#8a6a3a">
+    <path d="M166 228v-58c0-16 11-26 24-26s24 10 24 26v58z" fill="#e2d1ae" stroke-width="1.1"/>
+    <path d="M172 228v-56c0-12 8-20 18-20s18 8 18 20v56z" fill="#c9b289" opacity=".7" stroke-width=".6"/>
+    <path d="M190 152v76" stroke-width=".5" opacity=".6"/>
+  </g>
+  <use xlink:href="#arch" x="144" y="196"/>
+  <use xlink:href="#arch" x="222" y="196"/>
+  <use xlink:href="#window" x="146" y="122"/><use xlink:href="#window" x="226" y="122"/>
+
+  <!-- steps -->
+  <g fill="#f3e9d6" stroke="#8a6a3a" stroke-width=".8">
+    <path d="M150 228h80v4h-80z"/>
+    <path d="M142 232h96v4h-96z"/>
+    <path d="M134 236h112v4h-112z"/>
+  </g>
+
+  <!-- shrubs -->
+  <g fill="#a7b48a" opacity=".85">
+    <ellipse cx="56" cy="230" rx="12" ry="6"/><ellipse cx="128" cy="232" rx="10" ry="5"/>
+    <ellipse cx="252" cy="232" rx="10" ry="5"/><ellipse cx="324" cy="230" rx="12" ry="6"/>
+  </g>
+  <g fill="#e3a9a6">
+    <circle cx="52" cy="227" r="2"/><circle cx="60" cy="228" r="1.8"/><circle cx="320" cy="227" r="2"/><circle cx="328" cy="228" r="1.8"/>
+  </g>
+</svg>

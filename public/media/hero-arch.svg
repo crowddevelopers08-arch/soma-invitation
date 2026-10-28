@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 450 762">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#f9f0e0"/>
+      <stop offset=".55" stop-color="#f6e7cd"/>
+      <stop offset="1" stop-color="#f9f0e0"/>
+    </linearGradient>
+    <g id="r">
+      <circle r="13" fill="#c98482"/>
+      <path d="M-13 2c1 7 7 11 13 11s12-4 13-11c-3 4-8 6-13 6s-10-2-13-6z" fill="#a95f63"/>
+      <path d="M-10-4c2-5 6-8 10-8s8 3 10 8c-3-2-6-3-10-3s-7 1-10 3z" fill="#e5aca8"/>
+      <path d="M-3 1c1-2 2-3 3-3s2 1 3 3c-1 1-2 2-3 2s-2-1-3-2z" fill="#8f464c"/>
+    </g>
+    <path id="l" d="M0 0c7-9 19-10 28-4-7 9-19 10-28 4z" fill="#8fa06b"/>
+  </defs>
+  <rect width="450" height="762" fill="url(#bg)"/>
+  <path d="M75 700V260C75 150 145 80 225 80s150 70 150 180v440" fill="none" stroke="#b48c3d" stroke-width="1.4" opacity=".75"/>
+  <path d="M90 700V262C90 160 152 96 225 96s135 64 135 166v438" fill="none" stroke="#b48c3d" stroke-width=".8" opacity=".5"/>
+  <g>
+    <use xlink:href="#l" transform="translate(150 110) rotate(-160)"/>
+    <use xlink:href="#l" transform="translate(300 110) rotate(-20)"/>
+    <use xlink:href="#l" transform="translate(190 86) rotate(-120)"/>
+    <use xlink:href="#l" transform="translate(262 86) rotate(-60)"/>
+    <use xlink:href="#r" transform="translate(225 82) scale(1.3)"/>
+    <use xlink:href="#r" transform="translate(190 96)"/>
+    <use xlink:href="#r" transform="translate(262 96)"/>
+    <use xlink:href="#r" transform="translate(160 120) scale(.75)"/>
+    <use xlink:href="#r" transform="translate(292 120) scale(.75)"/>
+  </g>
+  <g>
+    <use xlink:href="#l" transform="translate(70 690) rotate(-80)"/>
+    <use xlink:href="#l" transform="translate(90 690) rotate(-30)"/>
+    <use xlink:href="#l" transform="translate(380 690) rotate(-100)"/>
+    <use xlink:href="#l" transform="translate(360 690) rotate(-150)"/>
+    <use xlink:href="#r" transform="translate(80 680)"/>
+    <use xlink:href="#r" transform="translate(370 680)"/>
+  </g>
+  <path d="M60 702h330" stroke="#b48c3d" stroke-width="1" opacity=".6"/>
+</svg>
