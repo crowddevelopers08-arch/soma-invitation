@@ -29,6 +29,16 @@ export function Intro() {
   }, []);
 
   useEffect(() => {
+    // iPadOS reports itself as a Mac, so also check for a touch screen.
+    const ua = navigator.userAgent;
+    const isIos = /iPad|iPhone|iPod/.test(ua) || (/Macintosh/.test(ua) && navigator.maxTouchPoints > 1);
+    const audio = audioRef.current;
+    if (!audio) return;
+    audio.src = isIos ? invitation.media.musicIos : invitation.media.music;
+    audio.load();
+  }, []);
+
+  useEffect(() => {
     document.documentElement.style.overflow = phase === "envelope" ? "hidden" : "";
   }, [phase]);
 
@@ -86,7 +96,7 @@ export function Intro() {
 
   return (
     <>
-      <audio ref={audioRef} src={invitation.media.music} loop preload="auto" />
+      <audio ref={audioRef} loop preload="auto" />
 
       {!overlayGone && (
         <div

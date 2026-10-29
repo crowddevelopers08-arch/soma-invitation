@@ -58,7 +58,9 @@ export const invitation = {
     // Gold monogram on a transparent background, shown on the envelope's wax seal.
     monogram: "/media/monogram.png",
     introVideo: "/media/intro.mp4",
+    // Android / desktop get the MP3; iPhone / iPad get the AAC (.m4a) version.
     music: "/media/music.mp3",
+    musicIos: "/media/music-ios.m4a",
     // Arch, swans and corner bouquets on transparency (built by scripts/prepare-art.ps1).
     heroScene: "/media/hero-scene.webp",
     // Dress code / gifts paper with its corner florals (built by scripts/prepare-art.ps1).
