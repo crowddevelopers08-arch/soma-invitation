@@ -7,16 +7,16 @@ export const invitation = {
   // Reception begins at 6 p.m. in Chennai (India Standard Time).
   eventDate: "2026-11-15T18:00:00+05:30",
 
-  // Shown above the tagline in Noto Naskh Arabic; set to "" to hide.
-  bismillah: "بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ",
-  tagline: ["Two Souls", "One destiny", "A Lifetime written by Allah"],
+  // Shown above the tagline in Noto Serif Tamil; set to "" to hide.
+  blessing: "ஸ்ரீ விநாயகர் துணை",
+  tagline: ["Two Souls", "One destiny", "A Lifetime blessed by God"],
   welcomeTitle: "Dear Friends and Family",
   // "\n" forces a line break.
-  welcomeText: "Join us for an evening of love,\nlaughter, duas, and unforgettable\nmemories as we begin our forever.",
+  welcomeText: "Join us for an evening of love,\nlaughter, blessings, and unforgettable\nmemories as we begin our forever.",
 
   schedule: [
     { time: "6 PM", label: "Guest Arrival" },
-    { time: "7 PM", label: "Nikkah Ceremony" },
+    { time: "7 PM", label: "Wedding Ceremony" },
     { time: "8 PM", label: "Mocktail Hour" },
     { time: "9 PM", label: "Dinner" },
     { time: "10 PM", label: "Dance" },

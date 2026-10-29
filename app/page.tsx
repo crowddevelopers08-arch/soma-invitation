@@ -62,11 +62,9 @@ export default function Home() {
           className="absolute left-[calc(50%-281px)] top-[770px] h-[491px] w-[598px] max-w-none"
         />
         <HeroSwans className="absolute left-[calc(50%-297px)] top-0 w-[611px] max-w-none" />
-        {inv.bismillah && (
-          <Reveal className="absolute left-[calc(50%-200px)] top-[837px] w-[400px] text-center font-naskh text-[29px] leading-[1.6] text-[#8d6e2b]" >
-            <span dir="rtl" lang="ar">
-              {inv.bismillah}
-            </span>
+        {inv.blessing && (
+          <Reveal className="absolute left-[calc(50%-200px)] top-[837px] w-[400px] text-center font-tamil text-[24px] leading-[1.9] text-[#8d6e2b]" >
+            <span lang="ta">{inv.blessing}</span>
           </Reveal>
         )}
 
@@ -177,7 +175,7 @@ export default function Home() {
             <img src="/media/ornament-drop.svg" alt="" className="block w-full" />
           </Reveal>
           <Reveal anim="zoomin" duration={1} scale={0.9} className="absolute left-[calc(50%-189px)] top-[205px] w-[378px]">
-            <img src="/media/venue.webp" alt="" className="block w-full" />
+            <img src="/media/venue-mahal.svg" alt="" className="block w-full" />
           </Reveal>
           {petals.map((p, i) => (
             <div key={i} className={`absolute ${p.cls}`}>

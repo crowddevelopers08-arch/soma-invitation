@@ -1,5 +1,5 @@
 import type { Metadata, Viewport } from "next";
-import { Beau_Rivage, Cinzel, Cormorant_Garamond, Federo, Imperial_Script, Noto_Naskh_Arabic, Ovo } from "next/font/google";
+import { Beau_Rivage, Cinzel, Cormorant_Garamond, Federo, Imperial_Script, Noto_Serif_Tamil, Ovo } from "next/font/google";
 import { invitation } from "@/content/invitation";
 import "./globals.css";
 
@@ -8,7 +8,7 @@ const beau = Beau_Rivage({ weight: "400", subsets: ["latin"], variable: "--nf-be
 const ovo = Ovo({ weight: "400", subsets: ["latin"], variable: "--nf-ovo" });
 const cormorant = Cormorant_Garamond({ weight: ["300", "400"], subsets: ["latin"], variable: "--nf-cormorant" });
 const cinzel = Cinzel({ weight: ["400", "500"], subsets: ["latin"], variable: "--nf-cinzel" });
-const naskh = Noto_Naskh_Arabic({ weight: "400", subsets: ["arabic"], variable: "--nf-naskh" });
+const tamil = Noto_Serif_Tamil({ weight: "500", subsets: ["tamil"], variable: "--nf-tamil" });
 const federo = Federo({ weight: "400", subsets: ["latin"], variable: "--nf-federo" });
 
 export const metadata: Metadata = {
@@ -27,7 +27,7 @@ export const viewport: Viewport = {
 const zeroScale = `(function(){var d=document.documentElement;function u(){d.style.setProperty('--zs',String(Math.min(1,d.clientWidth/480)));}u();addEventListener('resize',u);if(window.ResizeObserver)new ResizeObserver(u).observe(d);})();`;
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
-  const fonts = [imperial, beau, ovo, cormorant, cinzel, naskh, federo].map((f) => f.variable).join(" ");
+  const fonts = [imperial, beau, ovo, cormorant, cinzel, tamil, federo].map((f) => f.variable).join(" ");
   return (
     <html lang="en" className={fonts} suppressHydrationWarning>
       <head>
