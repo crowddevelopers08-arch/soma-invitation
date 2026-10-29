@@ -2,10 +2,14 @@
 
 import { useEffect, useRef, useState } from "react";
 import { invitation } from "@/content/invitation";
+import { Envelope } from "./Envelope";
 
-type Phase = "envelope" | "video" | "done";
+type Phase = "envelope" | "opening" | "video" | "done";
 
-// Envelope overlay → opening video + music → floating play/pause button.
+// How long the envelope takes to open before the video takes over (see .env-* in globals.css).
+const OPEN_MS = 5000;
+
+// Envelope overlay → envelope opens → opening video + music → floating play/pause button.
 export function Intro() {
   const [phase, setPhase] = useState<Phase>("envelope");
   const [overlayGone, setOverlayGone] = useState(false);
@@ -38,8 +42,13 @@ export function Intro() {
     audio.load();
   }, []);
 
+  // Lets the page start animations (the hero swans) once the envelope has opened.
   useEffect(() => {
-    document.documentElement.style.overflow = phase === "envelope" ? "hidden" : "";
+    if (phase === "video" || phase === "done") document.documentElement.dataset.intro = "done";
+  }, [phase]);
+
+  useEffect(() => {
+    document.documentElement.style.overflow = phase === "envelope" || phase === "opening" ? "hidden" : "";
   }, [phase]);
 
   // Android/Samsung only accept unmuted play() from a click, so touchstart just primes the element.
@@ -65,16 +74,23 @@ export function Intro() {
 
   function open() {
     if (phase !== "envelope") return;
-    setPhase("video");
-    setTimeout(() => setOverlayGone(true), 1400);
+    setPhase("opening");
 
-    videoRef.current?.play().catch(() => endSequence());
-
+    // Music starts on the tap itself; mobile browsers only allow it inside the gesture.
     const audio = audioRef.current;
     if (audio) {
       audio.volume = 1;
       audio.play().catch(() => setPlaying(false));
     }
+
+    const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    setTimeout(startVideo, reduceMotion ? 0 : OPEN_MS);
+  }
+
+  function startVideo() {
+    setPhase("video");
+    setTimeout(() => setOverlayGone(true), 1400);
+    videoRef.current?.play().catch(() => endSequence());
   }
 
   function onTimeUpdate() {
@@ -103,22 +119,17 @@ export function Intro() {
           onClick={open}
           onTouchStart={unlockAudio}
           className={`fixed inset-0 z-[99999] flex cursor-pointer select-none flex-col items-center justify-center bg-cream [-webkit-tap-highlight-color:transparent] transition-opacity duration-[1400ms] ease-in-out ${
-            phase === "envelope" ? "opacity-100" : "pointer-events-none opacity-0"
+            phase === "envelope" || phase === "opening" ? "opacity-100" : "pointer-events-none opacity-0"
           }`}
         >
           <div className="relative w-[min(100%,62svh)] [container-type:inline-size]">
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img src={invitation.media.envelope} alt="Open your invitation" draggable={false} className="block w-full" />
-            {/* Gold monogram pressed into the blank wax seal */}
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img
-              src={invitation.media.monogram}
-              alt=""
-              draggable={false}
-              className="absolute left-[49.2%] top-[50.7%] w-[17.5cqw] -translate-x-1/2 -translate-y-1/2 [filter:drop-shadow(0_0.25cqw_0.15cqw_rgba(40,0,8,0.6))_drop-shadow(0_-0.1cqw_0.05cqw_rgba(255,236,190,0.35))]"
-            />
+            <Envelope open={phase !== "envelope"} />
             {/* Debossed "tap to open" prompt under the seal */}
-            <div className="absolute left-[49.4%] top-[65.6%] flex -translate-x-1/2 flex-col items-center gap-[2.6cqw] text-[rgba(158,132,110,0.72)] [text-shadow:0_0.12cqw_0_rgba(255,255,255,0.4)]">
+            <div
+              className={`absolute left-[49.4%] top-[65.6%] flex -translate-x-1/2 transition-opacity duration-500 ${
+                phase === "envelope" ? "opacity-100" : "opacity-0"
+              } flex-col items-center gap-[2.6cqw] text-[rgba(158,132,110,0.72)] [text-shadow:0_0.12cqw_0_rgba(255,255,255,0.4)]`}
+            >
               <svg viewBox="0 0 14 8" className="w-[3.2cqw] overflow-visible">
                 <path d="M1 7 7 1l6 6" fill="none" stroke="currentColor" strokeWidth="1" strokeLinecap="round" strokeLinejoin="round" />
               </svg>

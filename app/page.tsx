@@ -4,6 +4,7 @@ import Image from "next/image";
 import { invitation as inv } from "@/content/invitation";
 import { Artboard } from "@/components/Artboard";
 import { Countdown } from "@/components/Countdown";
+import { HeroSwans } from "@/components/HeroSwans";
 import { InViewGroup } from "@/components/InViewGroup";
 import { Intro } from "@/components/Intro";
 import { PaperCard } from "@/components/PaperCard";
@@ -60,7 +61,7 @@ export default function Home() {
           roughness={9}
           className="absolute left-[calc(50%-281px)] top-[770px] h-[491px] w-[598px] max-w-none"
         />
-        <img src={inv.media.heroScene} alt="" className="absolute left-[calc(50%-297px)] top-0 w-[611px] max-w-none" />
+        <HeroSwans className="absolute left-[calc(50%-297px)] top-0 w-[611px] max-w-none" />
         {inv.bismillah && (
           <Reveal className="absolute left-[calc(50%-200px)] top-[837px] w-[400px] text-center font-naskh text-[29px] leading-[1.6] text-[#8d6e2b]" >
             <span dir="rtl" lang="ar">

@@ -55,14 +55,22 @@ export const invitation = {
   media: {
     // Drop your files in /public/media with these names. Missing videos are skipped gracefully.
     envelope: "/media/envelope.jpg",
+    // envelope.jpg with the wax seal painted out, for under the lifted seal.
+    envelopeClean: "/media/envelope-clean.jpg",
     // Gold monogram on a transparent background, shown on the envelope's wax seal.
     monogram: "/media/monogram.png",
+    // The wax seal cut out of envelope.jpg (lifts off with the flap when the envelope opens).
+    seal: "/media/seal.png",
     introVideo: "/media/intro.mp4",
     // Android / desktop get the MP3; iPhone / iPad get the AAC (.m4a) version.
     music: "/media/music.mp3",
     musicIos: "/media/music-ios.m4a",
     // Arch, swans and corner bouquets on transparency (built by scripts/prepare-art.ps1).
     heroScene: "/media/hero-scene.webp",
+    // hero-scene split into the lake and two swans (built by scripts/make-swans.py) so the swans can swim.
+    heroLake: "/media/hero-lake.webp",
+    swanLeft: "/media/swan-left.png",
+    swanRight: "/media/swan-right.png",
     // Dress code / gifts paper with its corner florals (built by scripts/prepare-art.ps1).
     dressCard: "/media/dress-card.webp",
     closingPhoto: "/media/couple.jpg",

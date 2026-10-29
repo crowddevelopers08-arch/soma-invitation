@@ -148,3 +148,93 @@ body {
   from { opacity: 0; transform: translateY(30px); }
   to   { opacity: 1; transform: translateY(0); }
 }
+
+/* Envelope opening (components/Envelope.tsx, which also generates the env-top / env-seal keyframes).
+   Times are from the tap; Intro hands over at 5s (OPEN_MS). */
+.env-stage {
+  perspective: 300cqw;
+  perspective-origin: 50% 50%;
+}
+.env-top  { transform-origin: 50% 0; }
+.env-seal { transform-origin: 49.6% 51%; }
+.env-inner {
+  background: radial-gradient(ellipse 60% 50% at 50% 44%, #fffaf1 0%, #fbe9d0 35%, #efd3ae 70%, #ddb98f 100%);
+}
+.env-patch {
+  opacity: 0;
+}
+.env-glow {
+  opacity: 0;
+}
+.env-flood {
+  opacity: 0;
+  transform: translate(-50%, -50%) scale(0.1);
+  background: radial-gradient(circle, #fffaf0 0%, #fbf2e2 45%, rgba(249, 240, 224, 0) 70%);
+}
+.env-shade {
+  opacity: 0;
+  background: linear-gradient(to bottom, rgba(92, 66, 38, 0.22), rgba(92, 66, 38, 0.3));
+}
+.env-bottom .env-shade { background: linear-gradient(to bottom, rgba(82, 58, 30, 0.5), rgba(82, 58, 30, 0.34)); }
+.env-top .env-shade { background: rgba(255, 252, 246, 0.25); }
+
+/* Sealed at rest; on tap the light leaks from the seams, the top flap lifts part-way and holds. */
+.env[data-open] { animation: env-press 1.2s ease-in-out both; }
+.env[data-open] .env-glow { animation: env-in 1.6s 0.4s ease-in-out both; }
+.env[data-open] .env-shade { animation: env-in 2s 1s ease-in-out both; }
+.env[data-open] .env-patch { animation: env-in 0.5s 1.05s ease-out both; }
+/* Easing is baked into the generated keyframes, so these run linear and stay in lockstep. */
+.env[data-open] .env-top { animation: env-top 2.2s 1s linear both; }
+.env[data-open] .env-seal { animation: env-seal 2.2s 1s linear both; }
+.env[data-open] .env-flood { animation: env-flood 1.6s 3.8s cubic-bezier(0.45, 0, 0.55, 1) both; }
+
+@keyframes env-in {
+  to { opacity: 1; }
+}
+/* A gentle press as the seal is tapped */
+@keyframes env-press {
+  25% { transform: scale(0.99); }
+}
+@keyframes env-flood {
+  to { opacity: 1; transform: translate(-50%, -50%) scale(3.5); }
+}
+
+/* Hero swans (components/HeroSwans.tsx): glide in from either side once the envelope opens
+   (Intro sets html[data-intro=done]), meet with their necks forming a heart, then float. */
+.swan {
+  opacity: 0;
+  animation: swan-in-left 6s 0.6s cubic-bezier(0.33, 0, 0.2, 1) both paused;
+}
+.swan-left  { --swim: -34%; }
+.swan-right { --swim: 34%; animation-name: swan-in-right; }
+.swan-bob {
+  position: relative;
+  animation: swan-bob 4.5s ease-in-out infinite paused;
+}
+.swan-right .swan-bob { animation-delay: -2.2s; }
+.swan-reflection {
+  /* Flipped in place below the swan; the mask is flipped with it, so it fades out downwards */
+  transform: scaleY(-1);
+  opacity: 0.45;
+  filter: blur(1px) brightness(0.9);
+  -webkit-mask-image: linear-gradient(to top, black 15%, transparent 80%);
+  mask-image: linear-gradient(to top, black 15%, transparent 80%);
+}
+html[data-intro="done"] .swan,
+html[data-intro="done"] .swan-bob { animation-play-state: running; }
+
+@keyframes swan-in-left {
+  from { opacity: 0; transform: translateX(var(--swim)); }
+  25%  { opacity: 1; }
+  to   { opacity: 1; transform: translateX(0); }
+}
+@keyframes swan-in-right {
+  from { opacity: 0; transform: translateX(var(--swim)); }
+  25%  { opacity: 1; }
+  to   { opacity: 1; transform: translateX(0); }
+}
+/* A slow float: each swan rises and settles a touch, out of step with the other */
+@keyframes swan-bob {
+  0%, 100% { transform: translateY(0) rotate(0deg); }
+  50%      { transform: translateY(1.2%) rotate(-0.6deg); }
+}
