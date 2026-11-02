@@ -25,28 +25,27 @@ export function ArchHero() {
         </Reveal>
       )}
 
-      <Reveal anim="fadeinup" duration={2} delay={3} distance={30} className="absolute left-[calc(50%-280px)] top-[159px] w-[560px] text-center font-script text-[40px] leading-[0.5] text-gold">
-        Wedding Day
+      <Reveal anim="fadeinup" duration={2} delay={3} distance={30} className="absolute left-[calc(50%-280px)] top-[218px] w-[560px] whitespace-pre-line text-center font-ovo text-[16px] leading-[1.25] text-gold">
+        {inv.inviteLine}
       </Reveal>
-      <Reveal anim="fadeinup" duration={2} delay={3} distance={30} className="absolute left-[calc(50%-280px)] top-[207px] w-[560px] text-center font-ovo text-[25px] leading-[0.5] text-gold">
-        {inv.dateLabel}
-      </Reveal>
-      <Reveal anim="fadeinup" duration={2} delay={3} distance={30} className="absolute left-[calc(50%-280px)] top-[294px] w-[560px] text-center font-names text-[52px] leading-[1.05] text-gold">
+      <Reveal anim="fadeinup" duration={2} delay={3} distance={30} className="absolute left-[calc(50%-280px)] top-[265px] w-[560px] text-center font-names text-[52px] leading-[1.05] text-gold">
         {inv.groom}
-        <br />
-        <br />
+        <span className="block h-10" />
         {inv.bride}
       </Reveal>
-      <Reveal anim="fadeinup" duration={2} delay={3} distance={30} className="absolute left-[calc(50%-22px)] top-[356px] w-[55px] text-center font-script text-[40px] leading-[1.1] text-gold-3">
+      <Reveal anim="fadeinup" duration={2} delay={3} distance={30} className="absolute left-[calc(50%-22px)] top-[320px] w-[55px] text-center font-names text-[40px] leading-[1.1] text-gold-3">
         &amp;
       </Reveal>
+      <Reveal anim="fadeinup" duration={2} delay={3} distance={30} className="absolute left-[calc(50%-280px)] top-[427px] w-[560px] whitespace-pre-line text-center font-ovo text-[22px] leading-[1.15] text-gold">
+        {inv.dateLabel}
+      </Reveal>
 
-      <div className="absolute left-[calc(50%-158px)] top-[518px] w-[316px] text-center font-script text-[32px] leading-[1.1] text-gold">Scroll down</div>
+      <div className="absolute left-[calc(50%-158px)] top-[523px] w-[316px] text-center font-ovo text-[22px] leading-[1.1] text-gold">Scroll down</div>
       <svg viewBox="0 0 25 15.86" className="absolute left-[calc(50%-12px)] top-[558px] w-[25px] [animation:bob_1.1s_linear_infinite]">
         <path fill="none" stroke="#937100" strokeLinecap="round" d="M0.98 1.15C4.34 5.49 9.14 9.17 12.5 13.5C16.8 9.17 19.68 5.49 23.98 1.15" />
       </svg>
 
-      <Reveal className={`absolute left-[calc(50%-280px)] top-[838px] w-[560px] text-center font-script text-[41px] leading-[42.9px] [word-spacing:0.18em] ${thickScript} ${onSky}`}>
+      <Reveal className={`absolute left-[calc(50%-280px)] top-[838px] w-[560px] text-center font-names text-[41px] leading-[42.9px] [word-spacing:0.18em] ${thickScript} ${onSky}`}>
         {inv.tagline.map((line, i) => (
           <span key={line}>
             {i > 0 && <br />}
@@ -57,7 +56,7 @@ export function ArchHero() {
       <Reveal
         duration={2}
         delay={0.2}
-        className={`invitation-copy absolute left-[calc(50%-190px)] top-[1440px] w-[380px] whitespace-pre-line text-center font-federo text-[21.2px] leading-[25.9px] ${onGrass}`}
+        className={`invitation-copy absolute left-[calc(50%-215px)] top-[1440px] w-[430px] whitespace-pre-line text-center font-ovo text-[21.2px] leading-[25.9px] ${onGrass}`}
       >
         {inv.welcomeTitle}
         <br />

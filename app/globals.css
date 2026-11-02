@@ -1,13 +1,9 @@
 @import "tailwindcss";
 
 @theme inline {
-  --font-script: var(--nf-imperial), cursive;
   --font-names: var(--nf-beau), cursive;
-  --font-ovo: var(--nf-ovo), Georgia, serif;
-  --font-serif: var(--nf-cormorant), Georgia, serif;
-  --font-cinzel: var(--nf-cinzel), Georgia, serif;
+  --font-ovo: var(--nf-ovo), var(--nf-tamil), Georgia, serif;
   --font-tamil: var(--nf-tamil), serif;
-  --font-federo: var(--nf-federo), Georgia, serif;
 
   --color-cream: #f9f0e0;
   --color-gold: #a67d2b;
@@ -204,7 +200,7 @@ body {
   width: calc(var(--u) * 337);
   margin: 0 auto;
   padding: calc(var(--u) * 8) 0 calc(var(--u) * 20);
-  font-family: "Times New Roman", Times, var(--nf-tamil), serif;
+  font-family: var(--nf-ovo), var(--nf-tamil), serif;
 }
 .guestbook-leaves {
   position: absolute;
@@ -245,14 +241,14 @@ body {
 .guestbook-title {
   position: absolute;
   left: calc(var(--u) * 29.5);
-  top: calc(var(--u) * 60);
+  top: calc(var(--u) * 59);
   width: calc(var(--u) * 281);
   margin: 0;
   text-align: center;
-  font-size: calc(var(--u) * 16);
-  font-weight: 700;
-  line-height: calc(var(--u) * 18);
-  letter-spacing: 0.04em;
+  font-family: var(--nf-beau), cursive;
+  font-size: calc(var(--u) * 27);
+  font-weight: 400;
+  line-height: calc(var(--u) * 30);
   color: #a67d2b;
 }
 .guestbook-field {
@@ -264,7 +260,7 @@ body {
   background: transparent;
   padding: 0 calc(var(--u) * 13);
   /* Below 16px, iPhones zoom the page when a field is focused. */
-  font: max(16px, calc(var(--u) * 13.5)) "Times New Roman", Times, var(--nf-tamil), serif;
+  font: max(16px, calc(var(--u) * 13.5)) var(--nf-ovo), var(--nf-tamil), serif;
   color: #6c513f;
   outline: none;
 }
@@ -313,7 +309,7 @@ body {
   border: 0;
   border-radius: 999px;
   background: #5a0f1b;
-  font: 700 calc(var(--u) * 11.5) "Times New Roman", Times, serif;
+  font: 400 calc(var(--u) * 11.5) var(--nf-ovo), serif;
   letter-spacing: 0.02em;
   color: #f6f1e8;
   cursor: pointer;
@@ -354,7 +350,6 @@ body {
 }
 .guestbook-wish-name {
   font-size: calc(var(--u) * 11.5);
-  font-weight: 700;
   color: #5a0f1b;
   overflow-wrap: anywhere;
 }

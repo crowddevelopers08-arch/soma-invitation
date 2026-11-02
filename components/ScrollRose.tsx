@@ -4,7 +4,7 @@ import { useEffect, useRef } from "react";
 
 // Scroll-linked: once the rose reaches the middle of the window it travels down the
 // timeline, one waypoint per 100px of scroll (Tilda "scroll" step-by-step animation).
-const steps = [0, 105, 209, 311];
+const steps = [0, 95, 190, 285];
 const STEP_PX = 100;
 
 export function ScrollRose({ className = "", children }: { className?: string; children: React.ReactNode }) {

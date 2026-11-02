@@ -133,7 +133,7 @@ export function Intro() {
               <svg viewBox="0 0 14 8" className="w-[3.2cqw] overflow-visible">
                 <path d="M1 7 7 1l6 6" fill="none" stroke="currentColor" strokeWidth="1" strokeLinecap="round" strokeLinejoin="round" />
               </svg>
-              <div className="whitespace-nowrap pl-[0.24em] font-cinzel text-[2.45cqw] uppercase leading-none tracking-[0.24em]">Tap to open</div>
+              <div className="whitespace-nowrap pl-[0.24em] font-ovo text-[2.45cqw] uppercase leading-none tracking-[0.24em]">Tap to open</div>
             </div>
           </div>
         </div>

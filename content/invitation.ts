@@ -3,7 +3,10 @@
 export const invitation = {
   groom: "A. Somasundaram",
   bride: "G. Narmadha",
-  dateLabel: "15.11.2026",
+  // "\n" forces a line break.
+  inviteLine: "Together with their families you are invited to\nthe wedding of",
+  // "\n" forces a line break.
+  dateLabel: "Reception 15.11.2026\nWedding 16.11.2026",
   // Reception begins at 6 p.m. in Chennai (India Standard Time).
   eventDate: "2026-11-15T18:00:00+05:30",
 
@@ -15,10 +18,21 @@ export const invitation = {
   welcomeText: "Join us for an evening of love,\nlaughter, blessings, and unforgettable\nmemories as we begin our forever.",
 
   schedule: [
-    { time: "6 PM", label: "Guest Arrival" },
-    { time: "7 PM", label: "Wedding Ceremony" },
-    { time: "8 PM", label: "Dinner" },
-    { time: "9 PM", label: "Dance DJ" },
+    {
+      day: "Reception",
+      date: "15.11.2026",
+      events: [
+        { time: "6 PM", label: "Guest Arrival" },
+        { time: "7 PM", label: "Reception" },
+        { time: "8 PM", label: "Dinner" },
+        { time: "9 PM", label: "Dance DJ" },
+      ],
+    },
+    {
+      day: "Wedding",
+      date: "16.11.2026",
+      events: [{ time: "6.30 AM", label: "Wedding Ceremony" }],
+    },
   ],
 
   venue: {
@@ -54,7 +68,7 @@ export const invitation = {
   ],
 
   // The photos both pages use (the new ones are web-sized copies of public/NIVA4139, NIVA4362 and NIVA4177).
-  // Gallery order: the pillars lead, temple and picnic shots alternate, and the sunset silhouette ends it.
+  // Gallery order: the pillars lead, the temple steps break up the picnic shots, and the sunset silhouette ends it.
   photoPage: {
     gallery: [
       { src: "/media/photo-pillars.webp", alt: "An embrace between tall stone pillars, with the temple tower behind", width: 1333, height: 2000 },
@@ -64,7 +78,7 @@ export const invitation = {
       { src: "/media/photo-steps.webp", alt: "Holding hands on the steps of a stone temple pavilion", width: 1333, height: 2000 },
       { src: "/NIVA5057.jpg.jpeg", alt: "A reflection of the couple smiling in a picnic mirror", width: 6000, height: 4000 },
       { src: "/NIVA5300.jpg.jpeg", alt: "A lakeside picnic with mountains in the background", width: 6000, height: 4000 },
-      { src: "/media/photo-temple.webp", alt: "Standing close together on the grass beside an ancient temple", width: 1333, height: 2000 },
+      { src: "/media/photo-picnic-sunflowers.jpg", alt: "Smiling together with sunflowers and a book at a lakeside picnic", width: 1000, height: 1500 },
       { src: "/NIVA5241.jpg.jpeg", alt: "The couple silhouetted against the golden sunset", width: 4000, height: 6000 },
     ],
     closing: { src: "/media/closing-temple.webp", alt: "Standing close together beside an ancient temple", width: 1350, height: 1959 },

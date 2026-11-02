@@ -112,7 +112,7 @@ export function Guestbook() {
 
           <form onSubmit={submit}>
             <h2 id="guestbook-title" className="guestbook-title">
-              GUESTBOOK
+              Guestbook
             </h2>
             <input
               aria-label="Your name"

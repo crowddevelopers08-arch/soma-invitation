@@ -17,13 +17,19 @@ import { ScrollRose } from "./ScrollRose";
 // Breakpoint overrides follow Tilda's grids: max-[1199px] = 960, max-[959px] = 640,
 // max-[639px] = 480, max-[479px] = 320 (phones).
 
-const heading = "w-[560px] text-center font-script text-[41px] leading-[1.55] text-gold";
+const heading = "w-[560px] text-center font-names text-[41px] leading-[1.55] text-gold";
 
-const scheduleRows = [
-  { timeTop: 141, labelTop: 143, dot: 161, delay: 0 },
-  { timeTop: 246, labelTop: 248, dot: 266, delay: 0.1 },
-  { timeTop: 350, labelTop: 363, dot: 370, delay: 0.3 },
-  { timeTop: 455, labelTop: 468, dot: 475, delay: 0.4 },
+const scheduleDays = [
+  {
+    top: 125,
+    rows: [
+      { timeTop: 170, labelTop: 172, dot: 190, delay: 0 },
+      { timeTop: 265, labelTop: 278, dot: 285, delay: 0.1 },
+      { timeTop: 360, labelTop: 373, dot: 380, delay: 0.3 },
+      { timeTop: 455, labelTop: 468, dot: 475, delay: 0.4 },
+    ],
+  },
+  { top: 545, rows: [{ timeTop: 590, labelTop: 592, dot: 610, delay: 0 }] },
 ];
 
 const petals = [
@@ -77,38 +83,53 @@ export function InvitationPage({
       </div>
 
       {/* Schedule */}
-      <Artboard className="[--h:570px]">
-        <PaperCard id="paper-schedule" seed={11} className="absolute left-[calc(50%-281px)] top-[-20px] h-[600px] w-[598px] max-w-none" />
+      <Artboard className="[--h:700px]">
+        <PaperCard id="paper-schedule" seed={11} className="absolute left-[calc(50%-281px)] top-[-20px] h-[730px] w-[598px] max-w-none" />
         <Reveal className={`absolute left-[calc(50%-280px)] top-[45px] ${heading} max-[479px]:text-gold-2`}>Schedule of Events</Reveal>
 
-        {inv.schedule.map((item, i) => {
-          const row = scheduleRows[i];
-          if (!row) return null;
+        {inv.schedule.map((day, d) => {
+          const layout = scheduleDays[d];
+          if (!layout) return null;
           return (
-            <Fragment key={item.label}>
+            <Fragment key={day.date}>
               <Reveal
                 duration={1.5}
-                delay={row.delay}
-                style={{ top: row.timeTop }}
-                className="absolute left-[calc(50%-146px)] w-[117px] text-center font-ovo text-[30px] leading-[1.55] tracking-[-1px] text-taupe max-[959px]:left-[calc(50%-151px)] max-[959px]:w-[129px] max-[479px]:left-[calc(50%-156px)]"
+                style={{ top: layout.top }}
+                className="absolute left-[calc(50%-200px)] w-[400px] text-center font-ovo text-[24px] leading-[1.4] text-gold"
               >
-                {item.time}
+                {day.day} · {day.date}
               </Reveal>
-              <Reveal
-                duration={1.5}
-                delay={row.delay}
-                style={{ top: row.labelTop }}
-                className="schedule-label absolute left-[calc(50%+45px)] w-[94px] text-center font-serif text-[20px] font-light leading-[1.1] text-brown max-[1199px]:left-[calc(50%+50px)] max-[479px]:left-[calc(50%+45px)]"
-              >
-                {item.label}
-              </Reveal>
-              <div className="absolute left-[calc(50%-4px)] h-2 w-2 rotate-45 bg-dot max-[479px]:left-[calc(50%-5px)]" style={{ top: row.dot }} />
+              {day.events.map((item, i) => {
+                const row = layout.rows[i];
+                if (!row) return null;
+                return (
+                  <Fragment key={item.label}>
+                    <Reveal
+                      duration={1.5}
+                      delay={row.delay}
+                      style={{ top: row.timeTop }}
+                      className="absolute left-[calc(50%-146px)] w-[117px] text-center font-ovo text-[30px] leading-[1.55] tracking-[-1px] text-taupe max-[959px]:left-[calc(50%-151px)] max-[959px]:w-[129px] max-[479px]:left-[calc(50%-156px)]"
+                    >
+                      {item.time}
+                    </Reveal>
+                    <Reveal
+                      duration={1.5}
+                      delay={row.delay}
+                      style={{ top: row.labelTop }}
+                      className="schedule-label absolute left-[calc(50%+27px)] w-[130px] text-center font-ovo text-[20px] leading-[1.1] text-brown max-[1199px]:left-[calc(50%+32px)] max-[479px]:left-[calc(50%+27px)]"
+                    >
+                      {item.label}
+                    </Reveal>
+                    <div className="absolute left-[calc(50%-4px)] h-2 w-2 rotate-45 bg-dot max-[479px]:left-[calc(50%-5px)]" style={{ top: row.dot }} />
+                  </Fragment>
+                );
+              })}
             </Fragment>
           );
         })}
-        <div className="absolute left-[calc(50%-0.5px)] top-[160px] h-[321px] w-px bg-dot opacity-70 max-[479px]:left-[calc(50%-1.5px)]" />
+        <div className="absolute left-[calc(50%-0.5px)] top-[189px] h-[292px] w-px bg-dot opacity-70 max-[479px]:left-[calc(50%-1.5px)]" />
 
-        <ScrollRose className="absolute left-[calc(50%-27px)] top-[140px] w-[55px] max-[479px]:left-[calc(50%-28px)]">
+        <ScrollRose className="absolute left-[calc(50%-27px)] top-[169px] w-[55px] max-[479px]:left-[calc(50%-28px)]">
           <img src="/media/peony.png" alt="" className="block w-full scale-125" />
         </ScrollRose>
         <Reveal anim="fadeinright" duration={2} distance={40} className="absolute left-[calc(50%+125px)] top-[56px] w-[78px] max-[479px]:left-[calc(50%+117px)]">
@@ -185,8 +206,8 @@ export function InvitationPage({
             className="absolute left-0 top-[140px] h-[653px] w-full object-cover object-top [mask-image:linear-gradient(to_bottom,transparent,black_55px)]"
           />
         </div>
-        <div className="absolute left-[calc(50%-280px)] top-[22px] w-[560px] text-center font-script text-[41px] leading-[1.3] text-gold">{inv.closingTitle}</div>
-        <div className="absolute left-[calc(50%-210px)] top-[79px] w-[420px] whitespace-nowrap text-center font-serif text-[28px] font-normal leading-[1.4] text-gold">
+        <div className="absolute left-[calc(50%-280px)] top-[22px] w-[560px] text-center font-names text-[41px] leading-[1.3] text-gold">{inv.closingTitle}</div>
+        <div className="absolute left-[calc(50%-210px)] top-[79px] w-[420px] whitespace-nowrap text-center font-names text-[34px] font-normal leading-[1.2] text-gold">
           {inv.closingNames}
         </div>
         {/* Restore the pale artwork against white, then strengthen its alpha so

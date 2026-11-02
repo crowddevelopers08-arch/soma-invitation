@@ -39,7 +39,7 @@ export function WaxSeal({ label, className = "" }: { label: string; className?: 
         y="9"
         textAnchor="middle"
         fill="url(#seal-gold)"
-        style={{ fontFamily: "var(--nf-cinzel), Georgia, serif", fontSize: 27, letterSpacing: 1.5, fontWeight: 500 }}
+        style={{ fontFamily: "var(--nf-ovo), Georgia, serif", fontSize: 27, letterSpacing: 1.5, fontWeight: 400 }}
       >
         {label}
       </text>

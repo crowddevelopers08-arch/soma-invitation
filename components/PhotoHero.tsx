@@ -27,28 +27,27 @@ export function PhotoHero() {
         </Reveal>
       )}
 
-      <Reveal anim="fadeinup" duration={2} delay={3} distance={30} className={`absolute left-[calc(50%-280px)] top-[82px] w-[560px] text-center font-script text-[40px] leading-[0.5] [word-spacing:0.18em] ${onSky}`}>
-        Wedding Day
+      <Reveal anim="fadeinup" duration={2} delay={3} distance={30} className={`absolute left-[calc(50%-280px)] top-[70px] w-[560px] whitespace-pre-line text-center font-ovo text-[20px] leading-[1.25] ${onSky}`}>
+        {inv.inviteLine}
       </Reveal>
-      <Reveal anim="fadeinup" duration={2} delay={3} distance={30} className={`absolute left-[calc(50%-280px)] top-[122px] w-[560px] text-center font-ovo text-[25px] leading-[0.5] ${onSky}`}>
-        {inv.dateLabel}
-      </Reveal>
-      <Reveal anim="fadeinup" duration={2} delay={3} distance={30} className={`absolute left-[calc(50%-280px)] top-[150px] w-[560px] text-center font-names text-[52px] leading-[1.05] ${onSky}`}>
+      <Reveal anim="fadeinup" duration={2} delay={3} distance={30} className={`absolute left-[calc(50%-280px)] top-[124px] w-[560px] text-center font-names text-[52px] leading-[1.05] ${onSky}`}>
         {inv.groom}
-        <br />
-        <br />
+        <span className="block h-10" />
         {inv.bride}
       </Reveal>
-      <Reveal anim="fadeinup" duration={2} delay={3} distance={30} className={`absolute left-[calc(50%-22px)] top-[212px] w-[55px] text-center font-script text-[40px] leading-[1.1] ${onSky}`}>
+      <Reveal anim="fadeinup" duration={2} delay={3} distance={30} className={`absolute left-[calc(50%-22px)] top-[179px] w-[55px] text-center font-names text-[40px] leading-[1.1] ${onSky}`}>
         &amp;
       </Reveal>
+      <Reveal anim="fadeinup" duration={2} delay={3} distance={30} className={`absolute left-[calc(50%-280px)] top-[282px] w-[560px] whitespace-pre-line text-center font-ovo text-[22px] leading-[1.15] ${onSky}`}>
+        {inv.dateLabel}
+      </Reveal>
 
-      <div className={`absolute left-[calc(50%-158px)] top-[945px] w-[316px] text-center font-script text-[32px] leading-[1.1] [word-spacing:0.18em] ${thickScript} ${onGrass}`}>Scroll down</div>
+      <div className={`absolute left-[calc(50%-158px)] top-[950px] w-[316px] text-center font-ovo text-[22px] leading-[1.1] ${onGrass}`}>Scroll down</div>
       <svg viewBox="0 0 25 15.86" className="absolute left-[calc(50%-12px)] top-[985px] w-[25px] [animation:bob_1.1s_linear_infinite]">
         <path fill="none" stroke="#ffffff" strokeLinecap="round" d="M0.98 1.15C4.34 5.49 9.14 9.17 12.5 13.5C16.8 9.17 19.68 5.49 23.98 1.15" />
       </svg>
 
-      <Reveal className={`absolute left-[calc(50%-280px)] top-[1012px] w-[560px] text-center font-script text-[41px] leading-[42.9px] [word-spacing:0.18em] ${thickScript} ${onGrass}`}>
+      <Reveal className={`absolute left-[calc(50%-280px)] top-[1012px] w-[560px] text-center font-names text-[41px] leading-[42.9px] [word-spacing:0.18em] ${thickScript} ${onGrass}`}>
         {inv.tagline.map((line, i) => (
           <span key={line}>
             {i > 0 && <br />}
@@ -59,7 +58,7 @@ export function PhotoHero() {
       <Reveal
         duration={2}
         delay={0.2}
-        className={`invitation-copy absolute left-[calc(50%-190px)] top-[1148px] w-[380px] whitespace-pre-line text-center font-federo text-[21.2px] leading-[25.9px] ${onGrass}`}
+        className={`invitation-copy absolute left-[calc(50%-215px)] top-[1148px] w-[430px] whitespace-pre-line text-center font-ovo text-[21.2px] leading-[25.9px] ${onGrass}`}
       >
         {inv.welcomeTitle}
         <br />
