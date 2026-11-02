@@ -53,7 +53,7 @@ export const invitation = {
     { src: "/NIVA5300.jpg.jpeg", alt: "A lakeside picnic with mountains in the background", width: 6000, height: 4000 },
   ],
 
-  // The /photo page's own photos (the new ones are web-sized copies of public/NIVA4139, NIVA4362 and NIVA4177).
+  // The photos both pages use (the new ones are web-sized copies of public/NIVA4139, NIVA4362 and NIVA4177).
   // Gallery order: the pillars lead, temple and picnic shots alternate, and the sunset silhouette ends it.
   photoPage: {
     gallery: [

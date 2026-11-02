@@ -1,7 +1,7 @@
-import { ArchHero } from "@/components/ArchHero";
 import { InvitationPage } from "@/components/InvitationPage";
+import { PhotoHero } from "@/components/PhotoHero";
 import { invitation as inv } from "@/content/invitation";
 
 export default function Home() {
-  return <InvitationPage hero={<ArchHero />} gallery={inv.photoPage.gallery} closing={inv.photoPage.closing} />;
+  return <InvitationPage hero={<PhotoHero />} gallery={inv.photoPage.gallery} closing={inv.photoPage.closing} />;
 }

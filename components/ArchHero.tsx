@@ -5,7 +5,7 @@ import { HeroSwans } from "./HeroSwans";
 import { onGrass, onSky } from "./PhotoHero";
 import { Reveal } from "./Reveal";
 
-// The default page's hero: the painted arch and swans, over the couple's photo.
+// The /photo page's hero: the painted arch and swans, over the couple's photo.
 export function ArchHero() {
   return (
     <Artboard className="[--h:1590px]">

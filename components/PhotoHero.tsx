@@ -7,7 +7,7 @@ import { Reveal } from "./Reveal";
 export const onSky = "text-wine [text-shadow:0_0_10px_rgba(255,255,255,0.9)]";
 export const onGrass = "text-[#fff6e3] [text-shadow:0_1px_6px_rgba(0,0,0,0.65)]";
 
-// The /photo page's hero: the couple's photo as the background.
+// The default page's hero: the couple's photo as the background.
 export function PhotoHero() {
   return (
     <Artboard className="[--h:1280px]">
