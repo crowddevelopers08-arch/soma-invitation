@@ -1,4 +1,4 @@
-// Everything a client changes lives here: names, date, schedule, venue, RSVP and media paths.
+// Everything a client changes lives here: names, date, schedule, venue, guestbook and media paths.
 
 export const invitation = {
   groom: "A. Somasundaram",
@@ -30,9 +30,15 @@ export const invitation = {
       "https://www.google.com/maps?q=J.S.%20Mahal%2C%20179A%2C%20Kumaran%20Colony%20Main%20Road%2C%20Vadapalani%2C%20Chennai%20600026&output=embed",
   },
 
-  rsvp: {
-    intro: "To help us prepare for a joyful celebration,\nkindly confirm your attendance.",
-    deadline: "Please RSVP before November 15",
+  guestbook: {
+    // The wand button cycles through these to help guests start a wish.
+    suggestions: [
+      "Wishing you both a lifetime of love and happiness!",
+      "இனிய திருமண நல்வாழ்த்துக்கள்!",
+      "May your love grow stronger with each passing year.",
+      "மணமக்கள் பல்லாண்டு காலம் மகிழ்ச்சியுடன் வாழ்க!",
+      "Congratulations! Wishing you a beautiful journey together.",
+    ],
   },
 
   closingTitle: "Hope to see you there!",
@@ -47,6 +53,23 @@ export const invitation = {
     { src: "/NIVA5300.jpg.jpeg", alt: "A lakeside picnic with mountains in the background", width: 6000, height: 4000 },
   ],
 
+  // The /photo page's own photos (the new ones are web-sized copies of public/NIVA4139, NIVA4362 and NIVA4177).
+  // Gallery order: the pillars lead, temple and picnic shots alternate, and the sunset silhouette ends it.
+  photoPage: {
+    gallery: [
+      { src: "/media/photo-pillars.webp", alt: "An embrace between tall stone pillars, with the temple tower behind", width: 1333, height: 2000 },
+      { src: "/NIVA5190.jpg.jpeg", alt: "Looking at each other during a sunflower picnic", width: 6000, height: 4000 },
+      { src: "/NIVA5185.jpg.jpeg", alt: "An embrace with a bright sunflower bouquet", width: 4000, height: 6000 },
+      { src: "/NIVA5049.jpg.jpeg", alt: "Sharing a book together at a picnic", width: 4000, height: 6000 },
+      { src: "/media/photo-steps.webp", alt: "Holding hands on the steps of a stone temple pavilion", width: 1333, height: 2000 },
+      { src: "/NIVA5057.jpg.jpeg", alt: "A reflection of the couple smiling in a picnic mirror", width: 6000, height: 4000 },
+      { src: "/NIVA5300.jpg.jpeg", alt: "A lakeside picnic with mountains in the background", width: 6000, height: 4000 },
+      { src: "/media/photo-temple.webp", alt: "Standing close together on the grass beside an ancient temple", width: 1333, height: 2000 },
+      { src: "/NIVA5241.jpg.jpeg", alt: "The couple silhouetted against the golden sunset", width: 4000, height: 6000 },
+    ],
+    closing: { src: "/media/closing-temple.webp", alt: "Standing close together beside an ancient temple", width: 1350, height: 1959 },
+  },
+
   media: {
     // Drop your files in /public/media with these names. Missing videos are skipped gracefully.
     envelope: "/media/envelope.jpg",
@@ -60,6 +83,8 @@ export const invitation = {
     // Android / desktop get the MP3; iPhone / iPad get the AAC (.m4a) version.
     music: "/media/music.mp3",
     musicIos: "/media/music-ios.m4a",
+    // The couple's photo behind the hero text (public/NIVA4299.jpg resized for the web).
+    heroPhoto: "/media/hero-photo.webp",
     // Arch, swans and corner bouquets on transparency (built by scripts/prepare-art.ps1).
     heroScene: "/media/hero-scene.webp",
     // hero-scene split into the lake and two swans (built by scripts/make-swans.py) so the swans can swim.

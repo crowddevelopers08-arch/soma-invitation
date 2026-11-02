@@ -2,7 +2,7 @@ import Image from "next/image";
 import { invitation } from "@/content/invitation";
 import { Reveal } from "./Reveal";
 
-export function PhotoGallery() {
+export function PhotoGallery({ photos = invitation.gallery }: { photos?: typeof invitation.gallery }) {
   return (
     <section aria-labelledby="gallery-title" className="relative mx-auto w-full max-w-[1000px] px-5 pb-16 pt-12 sm:px-10 sm:py-20">
       <Reveal className="mb-9 text-center">
@@ -14,7 +14,7 @@ export function PhotoGallery() {
       </Reveal>
 
       <div className="columns-2 gap-3 max-[359px]:columns-1 sm:gap-5 md:columns-3">
-        {invitation.gallery.map((photo) => (
+        {photos.map((photo) => (
           <a
             key={photo.src}
             href={photo.src}

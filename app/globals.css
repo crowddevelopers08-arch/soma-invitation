@@ -139,16 +139,6 @@ body {
   50%      { background-position: 0% 0; }
 }
 
-/* RSVP submit button shine */
-@keyframes btn-flash {
-  0%   { transform: translateX(-85px); }
-  50%, 100% { transform: translateX(110cqw); }
-}
-@keyframes popup-in {
-  from { opacity: 0; transform: translateY(30px); }
-  to   { opacity: 1; transform: translateY(0); }
-}
-
 /* Envelope opening (components/Envelope.tsx, which also generates the env-top / env-seal keyframes).
    Times are from the tap; Intro hands over at 5s (OPEN_MS). */
 .env-stage {
@@ -197,6 +187,188 @@ body {
 }
 @keyframes env-flood {
   to { opacity: 1; transform: translate(-50%, -50%) scale(3.5); }
+}
+
+/* Guestbook (components/Guestbook.tsx). --u is 1px on the 337px-wide reference design, so the
+   whole section keeps its proportions at any width. */
+.guestbook {
+  position: relative;
+  overflow: hidden;
+  background-color: #f9f0e0;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='220'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.012 .35' numOctaves='3'/%3E%3CfeColorMatrix values='0 0 0 0 .45 0 0 0 0 .45 0 0 0 0 .42 0 0 0 .09 0'/%3E%3C/filter%3E%3Crect width='220' height='220' filter='url(%23n)'/%3E%3C/svg%3E");
+  container-type: inline-size;
+}
+.guestbook-inner {
+  --u: calc(min(100cqw, 480px) / 337);
+  position: relative;
+  width: calc(var(--u) * 337);
+  margin: 0 auto;
+  padding: calc(var(--u) * 8) 0 calc(var(--u) * 20);
+  font-family: "Times New Roman", Times, var(--nf-tamil), serif;
+}
+.guestbook-leaves {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: calc(var(--u) * 115);
+}
+.guestbook-stage {
+  position: relative;
+  height: calc(var(--u) * 285);
+}
+.guestbook-envelope {
+  position: absolute;
+  left: calc(var(--u) * 33);
+  top: calc(var(--u) * 28);
+  width: calc(var(--u) * 276);
+  height: calc(var(--u) * 225);
+  overflow: visible;
+  transform: rotate(13.2deg);
+}
+.guestbook-card {
+  position: absolute;
+  left: calc(var(--u) * 29.5);
+  top: calc(var(--u) * 56);
+  width: calc(var(--u) * 281);
+  height: calc(var(--u) * 203);
+  background-color: #fffaf3;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.5' numOctaves='3'/%3E%3CfeColorMatrix values='0 0 0 0 .5 0 0 0 0 .5 0 0 0 0 .5 0 0 0 .05 0'/%3E%3C/filter%3E%3Crect width='200' height='200' filter='url(%23n)'/%3E%3C/svg%3E");
+  box-shadow: calc(var(--u) * 1) calc(var(--u) * 2) calc(var(--u) * 4) rgba(60, 30, 15, 0.38);
+}
+.guestbook-clip {
+  position: absolute;
+  left: calc(var(--u) * 252);
+  top: calc(var(--u) * 41);
+  width: calc(var(--u) * 15);
+  transform: rotate(21deg);
+}
+.guestbook-title {
+  position: absolute;
+  left: calc(var(--u) * 29.5);
+  top: calc(var(--u) * 60);
+  width: calc(var(--u) * 281);
+  margin: 0;
+  text-align: center;
+  font-size: calc(var(--u) * 16);
+  font-weight: 700;
+  line-height: calc(var(--u) * 18);
+  letter-spacing: 0.04em;
+  color: #a67d2b;
+}
+.guestbook-field {
+  position: absolute;
+  left: calc(var(--u) * 66);
+  width: calc(var(--u) * 208);
+  border: max(1px, calc(var(--u) * 0.8)) solid #b48c3d;
+  border-radius: calc(var(--u) * 7);
+  background: transparent;
+  padding: 0 calc(var(--u) * 13);
+  /* Below 16px, iPhones zoom the page when a field is focused. */
+  font: max(16px, calc(var(--u) * 13.5)) "Times New Roman", Times, var(--nf-tamil), serif;
+  color: #6c513f;
+  outline: none;
+}
+.guestbook-field::placeholder {
+  font-size: calc(var(--u) * 13.5);
+  color: #a8927c;
+  opacity: 1;
+}
+.guestbook-field:focus {
+  border-color: #a67d2b;
+  box-shadow: 0 0 0 1px #a67d2b;
+}
+.guestbook-name {
+  top: calc(var(--u) * 93);
+  height: calc(var(--u) * 35);
+}
+.guestbook-message {
+  top: calc(var(--u) * 141);
+  height: calc(var(--u) * 38);
+  padding-top: calc(var(--u) * 8);
+  padding-bottom: calc(var(--u) * 4);
+  line-height: 1.2;
+  resize: none;
+}
+.guestbook-wand {
+  position: absolute;
+  left: calc(var(--u) * 66);
+  top: calc(var(--u) * 190);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: calc(var(--u) * 29);
+  height: calc(var(--u) * 25);
+  border: 0;
+  border-radius: calc(var(--u) * 5);
+  background: #f3e8d3;
+  padding: 0;
+  cursor: pointer;
+}
+.guestbook-send {
+  position: absolute;
+  left: calc(var(--u) * 162);
+  top: calc(var(--u) * 189);
+  width: calc(var(--u) * 112);
+  height: calc(var(--u) * 28);
+  border: 0;
+  border-radius: 999px;
+  background: #5a0f1b;
+  font: 700 calc(var(--u) * 11.5) "Times New Roman", Times, serif;
+  letter-spacing: 0.02em;
+  color: #f6f1e8;
+  cursor: pointer;
+}
+.guestbook-send:disabled {
+  opacity: 0.7;
+  cursor: default;
+}
+.guestbook-status {
+  position: absolute;
+  left: calc(var(--u) * 40);
+  top: calc(var(--u) * 225);
+  width: calc(var(--u) * 260);
+  margin: 0;
+  text-align: center;
+  font-size: calc(var(--u) * 11.5);
+  color: #6c513f;
+}
+.guestbook-list {
+  position: relative;
+  margin: 0 calc(var(--u) * 22) 0 calc(var(--u) * 18.5);
+  padding: 0;
+  list-style: none;
+}
+.guestbook-wish {
+  margin-bottom: calc(var(--u) * 10);
+  border: max(1px, calc(var(--u) * 0.7)) solid #e2d2ae;
+  border-radius: calc(var(--u) * 6);
+  background: #fffaf3;
+  padding: calc(var(--u) * 12) calc(var(--u) * 13) calc(var(--u) * 10);
+}
+.guestbook-wish-head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 0 calc(var(--u) * 8);
+}
+.guestbook-wish-name {
+  font-size: calc(var(--u) * 11.5);
+  font-weight: 700;
+  color: #5a0f1b;
+  overflow-wrap: anywhere;
+}
+.guestbook-wish-date {
+  font-size: calc(var(--u) * 10.5);
+  color: #846f61;
+}
+.guestbook-wish-text {
+  margin: calc(var(--u) * 7) 0 0;
+  font-size: calc(var(--u) * 12);
+  line-height: 1.45;
+  color: #6c513f;
+  overflow-wrap: anywhere;
+  white-space: pre-line;
 }
 
 /* Hero swans (components/HeroSwans.tsx): glide in from either side once the envelope opens

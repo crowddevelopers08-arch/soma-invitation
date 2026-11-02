@@ -1,7 +1,7 @@
 # Wedding invitation (Next.js 15 + Tailwind v4)
 
 Single-page wedding invitation: envelope intro → opening video + music → hero, countdown,
-schedule timeline, location + map, RSVP popup, closing photo.
+schedule timeline, location + map, photo gallery, guestbook, closing photo.
 
 ```bash
 npm install
@@ -43,8 +43,8 @@ Add `?skipintro` to the URL to jump past the envelope while designing.
 | `closing-photo.svg` | Photo in the last section | Swap for a jpg and update `media.closingPhoto` |
 | `floral-frame.svg`, `garland-*.svg`, `bouquet.svg`, `rose.svg`, `petal.svg`, `divider.svg`, `flourish.svg`, `ornament.svg`, `venue.svg`, `map-frame.svg`, `wax-seal.svg` | Decorations | Keep the same file names, or update paths in `app/page.tsx` |
 
-- **RSVP responses** are POSTed to `app/api/rsvp/route.ts`, which currently only logs them.
-  Forward them to Google Sheets, email or a database there.
+- **Guestbook wishes** are saved by `lib/wishes.ts` to `data/wishes.json`. That needs a host with a persistent,
+  writable disk; on serverless hosts like Vercel, swap those functions for a database.
 
 ## How the layout works
 
