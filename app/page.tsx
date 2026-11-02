@@ -22,9 +22,8 @@ const heading = "w-[560px] text-center font-script text-[41px] leading-[1.55] te
 
 const scheduleRows = [
   { timeTop: 141, labelTop: 143, dot: 161, delay: 0 },
-  { timeTop: 224, labelTop: 215, dot: 243, delay: 0.1 },
-  { timeTop: 300, labelTop: 302, dot: 320, delay: 0.1 },
-  { timeTop: 378, labelTop: 392, dot: 399, delay: 0.3 },
+  { timeTop: 246, labelTop: 248, dot: 266, delay: 0.1 },
+  { timeTop: 350, labelTop: 363, dot: 370, delay: 0.3 },
   { timeTop: 455, labelTop: 468, dot: 475, delay: 0.4 },
 ];
 
@@ -214,30 +213,6 @@ export default function Home() {
         {/* Crown ornament resting on the top of the map frame */}
         <img src="/media/ornament-drop.svg" alt="" className="absolute left-[calc(50%-102px)] top-[-21px] w-[204px] -scale-y-100" />
         <img src="/media/divider.svg" alt="" className="absolute left-[calc(50%-95px)] top-[328px] w-[190px] -scale-y-100" />
-      </Artboard>
-
-      {/* Dress code & gifts */}
-      <Artboard className="[--h:541px]">
-        {/* Paper with its corner florals (one cut-out), same paper width as the hero card; 50px of space above */}
-        <img src={inv.media.dressCard} alt="" className="absolute left-[calc(50%-284.3px)] top-[50px] w-[613.5px] max-w-none" />
-        <div className="absolute left-[calc(50%-280px)] top-[133px] w-[560px] text-center font-script text-[40px] leading-[50px] text-gold">Dress Code</div>
-        <Reveal
-          anim="fadeinup"
-          duration={2}
-          distance={40}
-          className="invitation-copy absolute left-[calc(50%-190px)] top-[205px] w-[380px] whitespace-pre-line text-center font-serif text-[21.3px] leading-[26.1px] text-[#725846]"
-        >
-          {inv.dressCode}
-        </Reveal>
-        <div className="absolute left-[calc(50%-280px)] top-[333px] w-[560px] text-center font-script text-[40px] leading-[50px] text-gold">Gift Preference</div>
-        <Reveal
-          anim="fadeinup"
-          duration={2}
-          distance={40}
-          className="invitation-copy absolute left-[calc(50%-190px)] top-[403px] w-[380px] whitespace-pre-line text-center font-serif text-[21.3px] leading-[26.1px] text-[#725846]"
-        >
-          {inv.giftNote}
-        </Reveal>
       </Artboard>
 
       {/* RSVP */}

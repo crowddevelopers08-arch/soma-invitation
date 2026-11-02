@@ -1,7 +1,7 @@
 # Wedding invitation (Next.js 15 + Tailwind v4)
 
 Single-page wedding invitation: envelope intro → opening video + music → hero, countdown,
-schedule timeline, location + map, dress code & gifts, RSVP popup, closing photo.
+schedule timeline, location + map, RSVP popup, closing photo.
 
 ```bash
 npm install

@@ -17,9 +17,8 @@ export const invitation = {
   schedule: [
     { time: "6 PM", label: "Guest Arrival" },
     { time: "7 PM", label: "Wedding Ceremony" },
-    { time: "8 PM", label: "Mocktail Hour" },
-    { time: "9 PM", label: "Dinner" },
-    { time: "10 PM", label: "Dance" },
+    { time: "8 PM", label: "Dinner" },
+    { time: "9 PM", label: "Dance DJ" },
   ],
 
   venue: {
@@ -30,10 +29,6 @@ export const invitation = {
     mapEmbed:
       "https://www.google.com/maps?q=J.S.%20Mahal%2C%20179A%2C%20Kumaran%20Colony%20Main%20Road%2C%20Vadapalani%2C%20Chennai%20600026&output=embed",
   },
-
-  // "\n" forces a line break.
-  dressCode: "We kindly ask guests to avoid deep\nred and maroon attire for the\ncelebration.",
-  giftNote: "Kindly, no boxed gifts please.",
 
   rsvp: {
     intro: "To help us prepare for a joyful celebration,\nkindly confirm your attendance.",
@@ -71,8 +66,6 @@ export const invitation = {
     heroLake: "/media/hero-lake.webp",
     swanLeft: "/media/swan-left.png",
     swanRight: "/media/swan-right.png",
-    // Dress code / gifts paper with its corner florals (built by scripts/prepare-art.ps1).
-    dressCard: "/media/dress-card.webp",
     closingPhoto: "/media/couple.jpg",
   },
 };
