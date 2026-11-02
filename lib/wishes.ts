@@ -1,38 +1,56 @@
-import { promises as fs } from "node:fs";
-import path from "node:path";
+import { neon } from "@neondatabase/serverless";
 
-// Guestbook storage: a JSON file on the server's disk. This needs a host with a persistent,
-// writable disk. On serverless hosts like Vercel, replace these two functions with a database.
+// Guestbook storage: a `wishes` table in Neon Postgres. The connection string comes from
+// DATABASE_URL, which is in .env.local for development and in Vercel's settings when deployed.
 
 export type Wish = { id: string; name: string; message: string; createdAt: string };
 
-const FILE = path.join(process.cwd(), "data", "wishes.json");
+type Row = { id: string; name: string; message: string; created_at: Date };
 
-async function read(): Promise<Wish[]> {
-  try {
-    return JSON.parse(await fs.readFile(FILE, "utf8"));
-  } catch (error) {
-    if ((error as NodeJS.ErrnoException).code === "ENOENT") return [];
+const toWish = (row: Row): Wish => ({
+  id: row.id,
+  name: row.name,
+  message: row.message,
+  createdAt: new Date(row.created_at).toISOString(),
+});
+
+function db() {
+  const url = process.env.DATABASE_URL;
+  if (!url) throw new Error("DATABASE_URL is not set");
+  return neon(url);
+}
+
+// Creates the table on first use, so a fresh database needs no setup step.
+let ready: Promise<unknown> | undefined;
+
+function ensureTable() {
+  ready ??= db()`
+    CREATE TABLE IF NOT EXISTS wishes (
+      id uuid PRIMARY KEY DEFAULT gen_random_uuid(),
+      name text NOT NULL,
+      message text NOT NULL,
+      created_at timestamptz NOT NULL DEFAULT now()
+    )
+  `.catch((error) => {
+    ready = undefined;
     throw error;
-  }
+  });
+  return ready;
 }
 
 // Newest first.
-export function listWishes() {
-  return read();
+export async function listWishes(): Promise<Wish[]> {
+  await ensureTable();
+  const rows = await db()`SELECT id, name, message, created_at FROM wishes ORDER BY created_at DESC`;
+  return (rows as Row[]).map(toWish);
 }
 
-// Writes run one at a time, so two guests posting together can't overwrite each other.
-let queue: Promise<unknown> = Promise.resolve();
-
-export function addWish(name: string, message: string) {
-  const write = queue.then(async () => {
-    const wish: Wish = { id: crypto.randomUUID(), name, message, createdAt: new Date().toISOString() };
-    const wishes = await read();
-    await fs.mkdir(path.dirname(FILE), { recursive: true });
-    await fs.writeFile(FILE, JSON.stringify([wish, ...wishes], null, 2));
-    return wish;
-  });
-  queue = write.catch(() => {});
-  return write;
+export async function addWish(name: string, message: string): Promise<Wish> {
+  await ensureTable();
+  const rows = await db()`
+    INSERT INTO wishes (name, message)
+    VALUES (${name}, ${message})
+    RETURNING id, name, message, created_at
+  `;
+  return toWish(rows[0] as Row);
 }

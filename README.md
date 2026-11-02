@@ -43,8 +43,8 @@ Add `?skipintro` to the URL to jump past the envelope while designing.
 | `closing-photo.svg` | Photo in the last section | Swap for a jpg and update `media.closingPhoto` |
 | `floral-frame.svg`, `garland-*.svg`, `bouquet.svg`, `rose.svg`, `petal.svg`, `divider.svg`, `flourish.svg`, `ornament.svg`, `venue.svg`, `map-frame.svg`, `wax-seal.svg` | Decorations | Keep the same file names, or update paths in `app/page.tsx` |
 
-- **Guestbook wishes** are saved by `lib/wishes.ts` to `data/wishes.json`. That needs a host with a persistent,
-  writable disk; on serverless hosts like Vercel, swap those functions for a database.
+- **Guestbook wishes** are saved by `lib/wishes.ts` in a Neon Postgres `wishes` table. Set `DATABASE_URL` in
+  `.env.local` for development and in Vercel's environment variables when deployed.
 
 ## How the layout works
 
