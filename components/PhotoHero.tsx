@@ -22,7 +22,7 @@ export function PhotoHero() {
       {/* Darkens the grass so the cream text reads, starting below the couple's feet */}
       <div className="absolute left-[calc(50%-306px)] top-[850px] h-[430px] w-[612px] max-w-none bg-[linear-gradient(to_bottom,rgba(20,12,6,0)_0%,rgba(20,12,6,0.8)_22%,rgba(20,12,6,0.88)_100%)]" />
       {inv.blessing && (
-        <Reveal className={`absolute left-[calc(50%-200px)] top-[18px] w-[400px] text-center font-tamil text-[24px] leading-[1.9] ${onSky}`}>
+        <Reveal className={`absolute left-[calc(50%-200px)] top-[18px] w-[400px] text-center font-tamil text-[19px] leading-[45.6px] ${onSky}`}>
           <span lang="ta">{inv.blessing}</span>
         </Reveal>
       )}

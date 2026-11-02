@@ -20,7 +20,7 @@ export function ArchHero() {
       <div className="absolute left-[calc(50%-306px)] top-[1320px] h-[270px] w-[612px] max-w-none bg-[linear-gradient(to_bottom,rgba(20,12,6,0)_0%,rgba(20,12,6,0.8)_40%,rgba(20,12,6,0.88)_100%)]" />
       <HeroSwans className="absolute left-[calc(50%-297px)] top-0 w-[611px] max-w-none" />
       {inv.blessing && (
-        <Reveal className={`absolute left-[calc(50%-200px)] top-[785px] w-[400px] text-center font-tamil text-[24px] leading-[1.9] ${onSky}`}>
+        <Reveal className={`absolute left-[calc(50%-200px)] top-[785px] w-[400px] text-center font-tamil text-[19px] leading-[45.6px] ${onSky}`}>
           <span lang="ta">{inv.blessing}</span>
         </Reveal>
       )}
