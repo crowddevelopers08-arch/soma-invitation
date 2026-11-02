@@ -5,7 +5,9 @@ import { Reveal } from "./Reveal";
 
 // Hero text over the photo: deep maroon on the pale sky, cream on the darkened grass.
 export const onSky = "text-wine [text-shadow:0_0_10px_rgba(255,255,255,0.9)]";
-export const onGrass = "text-[#fff6e3] [text-shadow:0_1px_6px_rgba(0,0,0,0.65)]";
+export const onGrass = "text-white [text-shadow:0_1px_3px_rgba(0,0,0,0.9),0_0_12px_rgba(0,0,0,0.6)]";
+// The script font's hairlines vanish over a photo, so thicken them.
+export const thickScript = "[-webkit-text-stroke:0.6px_currentColor]";
 
 // The default page's hero: the couple's photo as the background.
 export function PhotoHero() {
@@ -18,7 +20,7 @@ export function PhotoHero() {
         className="absolute left-[calc(50%-306px)] top-0 h-[1280px] w-[612px] max-w-none object-cover"
       />
       {/* Darkens the grass so the cream text reads, starting below the couple's feet */}
-      <div className="absolute left-[calc(50%-306px)] top-[850px] h-[430px] w-[612px] max-w-none bg-[linear-gradient(to_bottom,rgba(28,18,8,0)_0%,rgba(28,18,8,0.62)_30%,rgba(28,18,8,0.78)_100%)]" />
+      <div className="absolute left-[calc(50%-306px)] top-[850px] h-[430px] w-[612px] max-w-none bg-[linear-gradient(to_bottom,rgba(20,12,6,0)_0%,rgba(20,12,6,0.8)_22%,rgba(20,12,6,0.88)_100%)]" />
       {inv.blessing && (
         <Reveal className={`absolute left-[calc(50%-200px)] top-[18px] w-[400px] text-center font-tamil text-[24px] leading-[1.9] ${onSky}`}>
           <span lang="ta">{inv.blessing}</span>
@@ -41,12 +43,12 @@ export function PhotoHero() {
         &amp;
       </Reveal>
 
-      <div className={`absolute left-[calc(50%-158px)] top-[945px] w-[316px] text-center font-script text-[32px] leading-[1.1] [word-spacing:0.18em] ${onGrass}`}>Scroll down</div>
+      <div className={`absolute left-[calc(50%-158px)] top-[945px] w-[316px] text-center font-script text-[32px] leading-[1.1] [word-spacing:0.18em] ${thickScript} ${onGrass}`}>Scroll down</div>
       <svg viewBox="0 0 25 15.86" className="absolute left-[calc(50%-12px)] top-[985px] w-[25px] [animation:bob_1.1s_linear_infinite]">
-        <path fill="none" stroke="#fff6e3" strokeLinecap="round" d="M0.98 1.15C4.34 5.49 9.14 9.17 12.5 13.5C16.8 9.17 19.68 5.49 23.98 1.15" />
+        <path fill="none" stroke="#ffffff" strokeLinecap="round" d="M0.98 1.15C4.34 5.49 9.14 9.17 12.5 13.5C16.8 9.17 19.68 5.49 23.98 1.15" />
       </svg>
 
-      <Reveal className={`absolute left-[calc(50%-280px)] top-[1012px] w-[560px] text-center font-script text-[41px] leading-[42.9px] [word-spacing:0.18em] ${onGrass}`}>
+      <Reveal className={`absolute left-[calc(50%-280px)] top-[1012px] w-[560px] text-center font-script text-[41px] leading-[42.9px] [word-spacing:0.18em] ${thickScript} ${onGrass}`}>
         {inv.tagline.map((line, i) => (
           <span key={line}>
             {i > 0 && <br />}

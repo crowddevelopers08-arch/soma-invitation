@@ -2,7 +2,7 @@
 import { invitation as inv } from "@/content/invitation";
 import { Artboard } from "./Artboard";
 import { HeroSwans } from "./HeroSwans";
-import { onGrass, onSky } from "./PhotoHero";
+import { onGrass, onSky, thickScript } from "./PhotoHero";
 import { Reveal } from "./Reveal";
 
 // The /photo page's hero: the painted arch and swans, over the couple's photo.
@@ -17,7 +17,7 @@ export function ArchHero() {
         className="absolute left-[calc(50%-306px)] top-[770px] h-[820px] w-[612px] max-w-none object-cover"
       />
       {/* Darkens the grass so the cream text reads, starting below the couple's feet */}
-      <div className="absolute left-[calc(50%-306px)] top-[1320px] h-[270px] w-[612px] max-w-none bg-[linear-gradient(to_bottom,rgba(28,18,8,0)_0%,rgba(28,18,8,0.62)_35%,rgba(28,18,8,0.78)_100%)]" />
+      <div className="absolute left-[calc(50%-306px)] top-[1320px] h-[270px] w-[612px] max-w-none bg-[linear-gradient(to_bottom,rgba(20,12,6,0)_0%,rgba(20,12,6,0.8)_40%,rgba(20,12,6,0.88)_100%)]" />
       <HeroSwans className="absolute left-[calc(50%-297px)] top-0 w-[611px] max-w-none" />
       {inv.blessing && (
         <Reveal className={`absolute left-[calc(50%-200px)] top-[785px] w-[400px] text-center font-tamil text-[24px] leading-[1.9] ${onSky}`}>
@@ -46,7 +46,7 @@ export function ArchHero() {
         <path fill="none" stroke="#937100" strokeLinecap="round" d="M0.98 1.15C4.34 5.49 9.14 9.17 12.5 13.5C16.8 9.17 19.68 5.49 23.98 1.15" />
       </svg>
 
-      <Reveal className={`absolute left-[calc(50%-280px)] top-[838px] w-[560px] text-center font-script text-[41px] leading-[42.9px] [word-spacing:0.18em] ${onSky}`}>
+      <Reveal className={`absolute left-[calc(50%-280px)] top-[838px] w-[560px] text-center font-script text-[41px] leading-[42.9px] [word-spacing:0.18em] ${thickScript} ${onSky}`}>
         {inv.tagline.map((line, i) => (
           <span key={line}>
             {i > 0 && <br />}
