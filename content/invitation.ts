@@ -11,7 +11,7 @@ export const invitation = {
   eventDate: "2026-11-15T18:00:00+05:30",
 
   // Shown above the tagline in Noto Serif Tamil; set to "" to hide.
-  blessing: "ஸ்ரீ விநாயகர் துணை",
+  blessing: "",
   tagline: ["Two Souls", "One destiny", "A Lifetime blessed by God"],
   welcomeTitle: "Dear Friends and Family",
   // "\n" forces a line break.

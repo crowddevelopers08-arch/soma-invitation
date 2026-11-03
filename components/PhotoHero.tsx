@@ -27,18 +27,18 @@ export function PhotoHero() {
         </Reveal>
       )}
 
-      <Reveal anim="fadeinup" duration={2} delay={3} distance={30} className={`absolute left-[calc(50%-280px)] top-[70px] w-[560px] whitespace-pre-line text-center font-ovo text-[20px] leading-[1.25] ${onSky}`}>
+      <Reveal anim="fadeinup" duration={2} delay={3} distance={30} className={`absolute left-[calc(50%-280px)] top-[24px] w-[560px] whitespace-pre-line text-center font-ovo text-[20px] leading-[1.25] ${onSky}`}>
         {inv.inviteLine}
       </Reveal>
-      <Reveal anim="fadeinup" duration={2} delay={3} distance={30} className={`absolute left-[calc(50%-280px)] top-[124px] w-[560px] text-center font-names text-[52px] leading-[1.05] ${onSky}`}>
+      <Reveal anim="fadeinup" duration={2} delay={3} distance={30} className={`absolute left-[calc(50%-280px)] top-[88px] w-[560px] text-center font-names text-[52px] leading-[1.05] ${onSky}`}>
         {inv.groom}
         <span className="block h-10" />
         {inv.bride}
       </Reveal>
-      <Reveal anim="fadeinup" duration={2} delay={3} distance={30} className={`absolute left-[calc(50%-22px)] top-[179px] w-[55px] text-center font-names text-[40px] leading-[1.1] ${onSky}`}>
+      <Reveal anim="fadeinup" duration={2} delay={3} distance={30} className={`absolute left-[calc(50%-22px)] top-[143px] w-[55px] text-center font-names text-[40px] leading-[1.1] ${onSky}`}>
         &amp;
       </Reveal>
-      <Reveal anim="fadeinup" duration={2} delay={3} distance={30} className={`absolute left-[calc(50%-280px)] top-[282px] w-[560px] whitespace-pre-line text-center font-ovo text-[22px] leading-[1.15] ${onSky}`}>
+      <Reveal anim="fadeinup" duration={2} delay={3} distance={30} className={`absolute left-[calc(50%-280px)] top-[246px] w-[560px] whitespace-pre-line text-center font-ovo text-[22px] leading-[1.15] ${onSky}`}>
         {inv.dateLabel}
       </Reveal>
 
