@@ -56,7 +56,7 @@ export function ArchHero() {
       <Reveal
         duration={2}
         delay={0.2}
-        className={`invitation-copy absolute left-[calc(50%-215px)] top-[1440px] w-[430px] whitespace-pre-line text-center font-ovo text-[21.2px] leading-[25.9px] ${onGrass}`}
+        className={`absolute left-[calc(50%-280px)] top-[1452px] w-[560px] whitespace-pre-line text-center font-ovo text-[19px] leading-[25.9px] ${onGrass}`}
       >
         {inv.welcomeTitle}
         <br />

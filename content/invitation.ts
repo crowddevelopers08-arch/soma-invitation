@@ -6,7 +6,7 @@ export const invitation = {
   // "\n" forces a line break.
   inviteLine: "Together with their families you are invited to\nthe wedding of",
   // "\n" forces a line break.
-  dateLabel: "Reception 15.11.2026\nWedding 16.11.2026",
+  dateLabel: "Reception 15.11.2026\nWedding 16.11.2026 (6.00 AM to 7.30 AM)",
   // Reception begins at 6 p.m. in Chennai (India Standard Time).
   eventDate: "2026-11-15T18:00:00+05:30",
 
@@ -15,7 +15,7 @@ export const invitation = {
   tagline: ["Two Souls", "One destiny", "A Lifetime blessed by God"],
   welcomeTitle: "Dear Friends and Family",
   // "\n" forces a line break.
-  welcomeText: "Join us for an evening of love,\nlaughter, blessings, and unforgettable\nmemories as we begin our forever.",
+  welcomeText: "Join us for an evening of love, laughter, blessings,\nand unforgettable memories as we begin our forever.",
 
   schedule: [
     {
@@ -31,7 +31,7 @@ export const invitation = {
     {
       day: "Wedding",
       date: "16.11.2026",
-      events: [{ time: "6.30 AM", label: "Wedding Ceremony" }],
+      events: [{ time: "6.00 AM – 7.30 AM", label: "Wedding Ceremony" }],
     },
   ],
 

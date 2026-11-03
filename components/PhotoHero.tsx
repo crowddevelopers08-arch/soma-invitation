@@ -38,7 +38,7 @@ export function PhotoHero() {
       <Reveal anim="fadeinup" duration={2} delay={3} distance={30} className={`absolute left-[calc(50%-22px)] top-[143px] w-[55px] text-center font-names text-[40px] leading-[1.1] ${onSky}`}>
         &amp;
       </Reveal>
-      <Reveal anim="fadeinup" duration={2} delay={3} distance={30} className={`absolute left-[calc(50%-280px)] top-[246px] w-[560px] whitespace-pre-line text-center font-ovo text-[22px] leading-[1.15] ${onSky}`}>
+      <Reveal anim="fadeinup" duration={2} delay={3} distance={30} className={`absolute left-[calc(50%-280px)] top-[246px] w-[560px] whitespace-pre-line text-center font-ovo text-[22px] leading-[1.45] ${onSky}`}>
         {inv.dateLabel}
       </Reveal>
 
@@ -58,7 +58,7 @@ export function PhotoHero() {
       <Reveal
         duration={2}
         delay={0.2}
-        className={`invitation-copy absolute left-[calc(50%-215px)] top-[1148px] w-[430px] whitespace-pre-line text-center font-ovo text-[21.2px] leading-[25.9px] ${onGrass}`}
+        className={`absolute left-[calc(50%-280px)] top-[1160px] w-[560px] whitespace-pre-line text-center font-ovo text-[19px] leading-[25.9px] ${onGrass}`}
       >
         {inv.welcomeTitle}
         <br />

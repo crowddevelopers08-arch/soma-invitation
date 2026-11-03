@@ -19,7 +19,11 @@ import { ScrollRose } from "./ScrollRose";
 
 const heading = "w-[560px] text-center font-names text-[41px] leading-[1.55] text-gold";
 
-const scheduleDays = [
+const scheduleDays: {
+  top: number;
+  rows: { timeTop: number; labelTop: number; dot: number; delay: number }[];
+  inlineTop?: number;
+}[] = [
   {
     top: 125,
     rows: [
@@ -29,7 +33,8 @@ const scheduleDays = [
       { timeTop: 455, labelTop: 468, dot: 475, delay: 0.4 },
     ],
   },
-  { top: 545, rows: [{ timeTop: 590, labelTop: 592, dot: 610, delay: 0 }] },
+  // A time range is too wide for the columns, so this day's row is one centred line.
+  { top: 545, rows: [], inlineTop: 595 },
 ];
 
 const petals = [
@@ -100,6 +105,20 @@ export function InvitationPage({
                 {day.day} · {day.date}
               </Reveal>
               {day.events.map((item, i) => {
+                if (layout.inlineTop !== undefined) {
+                  return (
+                    <Reveal
+                      key={item.label}
+                      duration={1.5}
+                      style={{ top: layout.inlineTop }}
+                      className="absolute left-[calc(50%-280px)] flex w-[560px] items-center justify-center gap-[23px] whitespace-nowrap font-ovo"
+                    >
+                      <span className="text-[24px] leading-[1.55] tracking-[-1px] text-taupe">{item.time}</span>
+                      <span className="h-2 w-2 rotate-45 bg-dot" />
+                      <span className="text-[20px] leading-[1.1] text-brown">{item.label}</span>
+                    </Reveal>
+                  );
+                }
                 const row = layout.rows[i];
                 if (!row) return null;
                 return (
